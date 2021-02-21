@@ -2,7 +2,6 @@ package edu.pingpong.stockx.criteria;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import edu.pingpong.stockx.item.Ask;
 import edu.pingpong.stockx.item.Item;

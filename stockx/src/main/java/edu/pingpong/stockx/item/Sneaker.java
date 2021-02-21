@@ -66,6 +66,6 @@ public class Sneaker implements Item{
 
     @Override
     public String toString() {
-        return "\n\t\t" + getName() + "\t\t" + getStyle();
+        return "\n\t" + getName() + "\n\t\t" + getStyle();
     }
 }

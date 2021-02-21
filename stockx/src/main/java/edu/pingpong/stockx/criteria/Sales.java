@@ -14,18 +14,9 @@ public class Sales implements Criteria{
     }
 
     @Override
-    public List<Offer> checkCriteria(Item item) {
-        List<Offer> lista = new ArrayList<Offer>();
-        List<Offer> listaItems = item.offers();
-        
-        for (Offer zapato : listaItems){
-            if (zapato instanceof Sale){
-                lista.add(zapato);
-            }
-            else{
-                continue;
-            }
-        }
-        return lista;
+    public List<Offer> checkCriteria(Item sneaker) {
+        List<Offer> listaSale = new ArrayList<Offer>();
+        sneaker.offers().stream().filter(s -> s instanceof Sale).forEach(listaSale :: add);
+        return listaSale;
     }
 }
