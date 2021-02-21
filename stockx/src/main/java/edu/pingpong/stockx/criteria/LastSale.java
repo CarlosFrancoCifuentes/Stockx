@@ -5,7 +5,6 @@ import java.util.List;
 
 import edu.pingpong.stockx.item.Item;
 import edu.pingpong.stockx.item.Offer;
-import edu.pingpong.stockx.item.Sale;
 
 public class LastSale implements Criteria{
 
