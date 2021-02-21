@@ -11,6 +11,6 @@ public class SneakerTest {
     @Test
     public void toStringTest(){
         Sneaker sneaker = new Sneaker("Estilo", "Nombre");
-        assertEquals("Nombre Estilo", sneaker.toString());
+        assertEquals("\n\t\t"+ "Nombre" +"\t\t"+ "Estilo", sneaker.toString());
     }
 }

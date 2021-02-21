@@ -10,7 +10,7 @@ public class SaleTest {
     
     @Test
     public void toStringTest(){
-        Sale sneaker = new Sale("Estilo", 200);
-        assertEquals("Estilo 200", sneaker.toString());
+        Sale sale = new Sale("Size", 200);
+        assertEquals("\n\t\t"+ "Size" +"\t\t"+ "200", sale.toString());
     }
 }

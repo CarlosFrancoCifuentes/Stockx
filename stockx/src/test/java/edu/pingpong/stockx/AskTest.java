@@ -10,7 +10,7 @@ public class AskTest {
     
     @Test
     public void toStringTest(){
-        Ask sneaker = new Ask("Estilo", 200);
-        assertEquals("Estilo 200", sneaker.toString());
+        Ask ask = new Ask("Size", 200);
+        assertEquals("\n\t\t"+ "Size" +"\t\t"+ "200", ask.toString());
     }
 }

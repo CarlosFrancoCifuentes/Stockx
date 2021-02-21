@@ -10,7 +10,7 @@ public class BidTest {
 
     @Test
     public void toStringTest(){
-        Bid sneaker = new Bid("Estilo", 200);
-        assertEquals("Estilo 200", sneaker.toString());
+        Bid bid = new Bid("Size", 200);
+        assertEquals("\n\t\t"+ "Size" +"\t\t"+ "200", bid.toString());
     }
 }
