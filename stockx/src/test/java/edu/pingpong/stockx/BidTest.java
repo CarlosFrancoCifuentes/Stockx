@@ -11,6 +11,6 @@ public class BidTest {
     @Test
     public void toStringTest(){
         Bid sneaker = new Bid("Estilo", 200);
-        assertEquals("Estilo 200", sneaker.toString());
+        assertEquals("200 Estilo", sneaker.toString());
     }
 }

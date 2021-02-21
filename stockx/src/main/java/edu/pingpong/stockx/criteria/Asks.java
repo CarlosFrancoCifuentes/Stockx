@@ -2,6 +2,8 @@ package edu.pingpong.stockx.criteria;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import edu.pingpong.stockx.item.Ask;
 import edu.pingpong.stockx.item.Item;
@@ -15,17 +17,8 @@ public class Asks implements Criteria {
 
     @Override
     public List<Offer> checkCriteria(Item item) {
-        List<Offer> lista = new ArrayList<Offer>();
-        List<Offer> listaItems = item.offers();
-        
-        for (Offer zapato : listaItems){
-            if (zapato instanceof Ask){
-                lista.add(zapato);
-            }
-            else{
-                continue;
-            }
-        }
-        return lista;
+        List<Offer> listaAsks = item.offers();
+        listaAsks.stream().filter(ask -> ask instanceof Ask).collect(Collectors.toList());
+        return listaAsks;
     }
 }
