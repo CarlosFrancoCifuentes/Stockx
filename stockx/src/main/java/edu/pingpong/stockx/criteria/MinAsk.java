@@ -17,8 +17,6 @@ public class MinAsk implements Criteria{
         //Constructor
     }
 
-    
-
     @Override
     public List<Offer> checkCriteria(Item sneaker) {
         listaAsks = asks.checkCriteria(sneaker);
