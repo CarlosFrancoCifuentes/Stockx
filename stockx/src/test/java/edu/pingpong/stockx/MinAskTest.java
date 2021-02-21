@@ -10,7 +10,6 @@ import org.junit.Test;
 import edu.pingpong.stockx.criteria.Criteria;
 import edu.pingpong.stockx.criteria.MinAsk;
 import edu.pingpong.stockx.item.Ask;
-import edu.pingpong.stockx.item.Bid;
 import edu.pingpong.stockx.item.Item;
 import edu.pingpong.stockx.item.Offer;
 import edu.pingpong.stockx.item.Sneaker;
