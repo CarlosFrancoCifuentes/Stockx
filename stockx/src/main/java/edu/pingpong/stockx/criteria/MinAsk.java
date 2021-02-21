@@ -1,14 +1,18 @@
 package edu.pingpong.stockx.criteria;
 
 import java.util.ArrayList;
-
+import java.util.Comparator;
 import java.util.List;
 
-import edu.pingpong.stockx.item.Ask;
 import edu.pingpong.stockx.item.Item;
 import edu.pingpong.stockx.item.Offer;
 
 public class MinAsk implements Criteria{
+
+    private List<Offer> minAsk = new ArrayList<Offer>();
+    private List<Offer> listaAsks;
+    Criteria asks = new Asks();
+
     public MinAsk(){
         //Constructor
     }
@@ -16,28 +20,10 @@ public class MinAsk implements Criteria{
     
 
     @Override
-    public List<Offer> checkCriteria(Item item) {
-        List<Offer> lista = new ArrayList<Offer>();
-        List<Offer> listaItems = item.offers();
-        int min = 0;
-        List<Offer> minAsk = new ArrayList<Offer>();
-        
-        for (Offer zapato : listaItems){
-            if (zapato instanceof Ask){
-                lista.add(zapato);
-                if (min == 0){
-                    min = zapato.value();
-                }
-                if (zapato.value() <= min){
-                    min = zapato.value();
-                    minAsk.add(zapato);
-                    break;
-                }
-            }
-            else{
-                continue;
-            }
-        }
+    public List<Offer> checkCriteria(Item sneaker) {
+        listaAsks = asks.checkCriteria(sneaker);
+        Offer min = listaAsks.stream().filter(n -> n != null).min(Comparator.comparing(o -> o.value())).orElse(null);
+        minAsk.add(min);
         return minAsk;
     }
 }
