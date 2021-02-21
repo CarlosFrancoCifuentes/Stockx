@@ -9,27 +9,19 @@ import edu.pingpong.stockx.item.Sale;
 
 public class LastSale implements Criteria{
 
+    private List<Offer> lastSale = new ArrayList<Offer>();
+    private List<Offer> listaSales;
+    Criteria sales = new Sales();
+
     public LastSale(){
         //Constructor
     }
 
     @Override
-    public List<Offer> checkCriteria(Item item) {
-        List<Offer> lista = new ArrayList<Offer>();
-        List<Offer> listaItems = item.offers();
-        
-        for (Offer zapato : listaItems){
-            if (zapato instanceof Sale){
-                lista.add(zapato);
-            }
-            else{
-                continue;
-            }
-        }
-
-        List<Offer> lastSale = new ArrayList<Offer>();
-        lastSale.add(lista.get(lista.size() - 1));
-
+    public List<Offer> checkCriteria(Item sneaker) {
+        listaSales = sales.checkCriteria(sneaker);
+        Offer sales = listaSales.stream().filter(n -> n != null).reduce((first, second) -> second).orElse(null);
+        lastSale.add(sales);
         return lastSale;
     }
     
