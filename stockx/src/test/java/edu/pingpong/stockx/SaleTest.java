@@ -11,6 +11,6 @@ public class SaleTest {
     @Test
     public void toStringTest(){
         Sale sneaker = new Sale("Estilo", 200);
-        assertEquals("200 Estilo", sneaker.toString());
+        assertEquals("Estilo 200", sneaker.toString());
     }
 }
