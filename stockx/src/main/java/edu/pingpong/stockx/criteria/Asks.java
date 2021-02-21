@@ -16,7 +16,8 @@ public class Asks implements Criteria {
     @Override
     public List<Offer> checkCriteria(Item sneaker) {
         List<Offer> listaAsk = new ArrayList<Offer>();
-        sneaker.offers().stream().filter(s -> s instanceof Ask).forEach(listaAsk :: add);
+        sneaker.offers().stream().filter(s -> s instanceof Ask)
+            .forEach(listaAsk :: add);
         return listaAsk;
     }
 }
