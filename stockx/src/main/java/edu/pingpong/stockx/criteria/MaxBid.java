@@ -9,9 +9,7 @@ import edu.pingpong.stockx.item.Offer;
 
 public class MaxBid implements Criteria {
 
-    private List<Offer> maxBid = new ArrayList<Offer>();
-    private List<Offer> listaBids;
-    Criteria bids = new Bids();
+    
 
     public MaxBid(){
         //Constructor
@@ -21,6 +19,11 @@ public class MaxBid implements Criteria {
 
     @Override
     public List<Offer> checkCriteria(Item sneaker) {
+
+        List<Offer> maxBid = new ArrayList<Offer>();
+        List<Offer> listaBids;
+        Criteria bids = new Bids();
+
         listaBids = bids.checkCriteria(sneaker);
         Offer max = listaBids.stream().filter(n -> n != null).max(Comparator.comparing(o -> o.value())).orElse(null);
         maxBid.add(max);
