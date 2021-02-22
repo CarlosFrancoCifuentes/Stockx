@@ -196,6 +196,16 @@ public class Stockx {
                             sizeSales.get(sizeSales.size() -1).value());
         System.out.println("\n\t\t LAST SALE 9.5 US: " + sneaker.getSale());
 
+        /**
+         * Reutiliza el filtro AndCriteria 
+         * para filtrar las bids de la talla 9.5
+         */   
+
+        System.out.println("\n\t\t BIDS 9.5 US");
+        bids = new Bids();
+        Criteria andSizeBids = new AndCriteria(size, bids);
+        andSizeBids.checkCriteria(sneaker).forEach(System.out::print);
+
     }
 
     public static String draw(Item sneaker) {
