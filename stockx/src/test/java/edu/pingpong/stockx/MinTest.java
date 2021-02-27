@@ -39,7 +39,7 @@ public class MinTest {
         Min min = new Min(bids, size);
         List<Offer> minList = min.checkCriteria(sneaker);
         Offer result = minList.get(0);
-        assertEquals(1111, result.value());
+        assertEquals(666, result.value());
     }
 
 }
